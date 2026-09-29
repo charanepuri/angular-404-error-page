@@ -1,0 +1,209 @@
+<div
+  class="error-page"
+  [class.light-mode]="!isDarkMode"
+>
+
+  <!-- Theme Toggle -->
+
+  <button
+    type="button"
+    class="theme-toggle"
+    (click)="toggleTheme()"
+    [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+  >
+    {{ isDarkMode ? '☀️' : '🌙' }}
+  </button>
+
+
+  <!-- Main Content -->
+
+  <main class="error-container">
+
+    <!-- Angular Badge -->
+
+    <div class="angular-badge">
+      <span class="angular-symbol">A</span>
+      <span>Angular 21</span>
+    </div>
+
+
+    <!-- 404 -->
+
+    <div class="error-number">
+      404
+    </div>
+
+
+    <!-- Lost Route Visual -->
+
+    <div class="lost-visual">
+
+      <div class="orbit orbit-one"></div>
+
+      <div class="orbit orbit-two"></div>
+
+      <div class="route-node node-one"></div>
+      <div class="route-node node-two"></div>
+      <div class="route-node node-three"></div>
+
+      <div class="compass">
+        <span>✦</span>
+      </div>
+
+    </div>
+
+
+    <!-- Message -->
+
+    <h1>
+      Page Not Found
+    </h1>
+
+    <p class="description">
+      Looks like this route got lost somewhere
+      in the Angular universe.
+    </p>
+
+
+    <!-- Actions -->
+
+    <div class="actions">
+
+      <button
+        type="button"
+        class="btn primary-btn"
+        (click)="goHome()"
+      >
+        <span>⌂</span>
+        Go Home
+      </button>
+
+      <button
+        type="button"
+        class="btn secondary-btn"
+        (click)="goBack()"
+      >
+        <span>←</span>
+        Go Back
+      </button>
+
+    </div>
+
+
+    <!-- Countdown -->
+
+    @if (!redirectCancelled) {
+
+      <div class="redirect-box">
+
+        <div class="redirect-text">
+          Returning home in
+          <strong>{{ countdown }}</strong>
+          seconds
+        </div>
+
+        <div class="progress-track">
+          <div
+            class="progress-bar"
+            [style.width.%]="countdown * 10"
+          ></div>
+        </div>
+
+        <button
+          type="button"
+          class="stay-button"
+          (click)="stayHere()"
+        >
+          Stay Here
+        </button>
+
+      </div>
+
+    } @else {
+
+      <div class="cancelled-message">
+        Automatic redirect cancelled.
+      </div>
+
+    }
+
+
+    <!-- Developer Links -->
+
+    <div class="developer-section">
+
+      <div class="developer-name">
+        Charan Teja
+      </div>
+
+      <div class="developer-links">
+
+        <a
+          href="https://www.linkedin.com/in/charan-teja-972aa9231"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+
+        <a
+          href="https://github.com/charanepuri"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="https://www.instagram.com/_just_call_me_charan_tej"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="https://www.snapchat.com/add/justcalltej2003?share_id=o3MYfXqlpYE&locale=en-IN"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Snapchat
+        </a>
+
+      </div>
+
+
+      <div class="work-links">
+
+        <a
+          href="https://angular-portfolio-sigma-eight.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Angular Portfolio ↗
+        </a>
+
+        <a
+          href="https://profile-card-angular.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Profile Card ↗
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer>
+      Built with Angular 21
+      <span>•</span>
+      404 Error Page
+    </footer>
+
+  </main>
+
+</div>
